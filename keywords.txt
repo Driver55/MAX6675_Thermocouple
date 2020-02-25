@@ -19,3 +19,4 @@ SmoothThermocouple	KEYWORD1
 readCelsius	KEYWORD2
 readKelvin	KEYWORD2
 readFahrenheit	KEYWORD2
+FastReadCelsius KEYWORD2
