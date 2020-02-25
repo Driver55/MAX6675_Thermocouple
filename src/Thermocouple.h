@@ -14,6 +14,15 @@
 	Created by Yurii Salimov, May, 2019.
 	Released into the public domain.
 */
+
+/**
+	Integration by Nicola Deliso (Driver55)
+	https://github.com/Driver55/MAX6675_Thermocouple
+	
+	of fast Version for  	FastReadCelsius()
+							FastSpiRead()
+
+*/
 #ifndef THERMOCOUPLE_H
 #define THERMOCOUPLE_H
 
@@ -38,6 +47,13 @@ class Thermocouple {
 			@return temperature in degree Celsius
 		*/
 		virtual double readCelsius() = 0;
+		
+		/**
+			Reads a temperature in Celsius from the thermocouple in fast mode.
+
+			@return temperature in degree Celsius
+		*/
+		virtual double FastReadCelsius() = 0;
 
 		/**
 			Reads a temperature in Kelvin from the thermocouple.
