@@ -29,6 +29,19 @@ double MAX6675_Thermocouple::readCelsius() {
 	return (value * 0.25);
 }
 
+double MAX6675_Thermocouple::FastReadCelsius() {
+	digitalWrite(this->CS_pin, LOW);
+	delayMicroseconds(1);
+	int value = FastSpiRead();
+	value <<= 8;
+	value |= FastSpiRead();
+	digitalWrite(this->CS_pin, HIGH);
+	if (value & 0x4) {
+		return NAN;
+	}
+	value >>= 3;
+	return (value * 0.25);
+}
 /**
 	Returns a temperature in Kelvin.
 	Reads the temperature in Celsius,
@@ -61,6 +74,20 @@ byte MAX6675_Thermocouple::spiread() {
 		}
 		digitalWrite(this->SCK_pin, HIGH);
 		delay(1);
+	}
+	return value;
+}
+
+byte MAX6675_Thermocouple::FastSpiRead() {
+	byte value = 0;
+	for (int i = 7; i >= 0; --i) {
+		digitalWrite(this->SCK_pin, LOW);
+		delayMicroseconds(1);
+		if (digitalRead(this->SO_pin)) {
+			value |= (1 << i);
+		}
+		digitalWrite(this->SCK_pin, HIGH);
+		delayMicroseconds(1);
 	}
 	return value;
 }

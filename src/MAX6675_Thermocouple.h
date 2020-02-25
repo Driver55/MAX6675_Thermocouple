@@ -68,7 +68,15 @@ class MAX6675_Thermocouple final : public Thermocouple {
 			NAN if no thermocouple attached
 		*/
 		double readCelsius();
+		
+		/**
+			Reads a temperature in Celsius from the thermocouple.
 
+			@return temperature in degree Celsius or
+			NAN if no thermocouple attached
+		*/
+		double FastReadCelsius();
+		
 		/**
 			Reads a temperature in Kelvin from the thermocouple.
 
@@ -87,6 +95,8 @@ class MAX6675_Thermocouple final : public Thermocouple {
 
 	private:
 		byte spiread();
+		
+		byte FastSpiRead();
 
 		/**
 			Celsius to Kelvin conversion:

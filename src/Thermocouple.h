@@ -38,6 +38,13 @@ class Thermocouple {
 			@return temperature in degree Celsius
 		*/
 		virtual double readCelsius() = 0;
+		
+		/**
+			Reads a temperature in Celsius from the thermocouple in fast mode.
+
+			@return temperature in degree Celsius
+		*/
+		virtual double FastReadCelsius() = 0;
 
 		/**
 			Reads a temperature in Kelvin from the thermocouple.
