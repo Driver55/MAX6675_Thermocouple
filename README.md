@@ -63,6 +63,8 @@ GND: Ground.
 
 [Serial Reading](/examples/SerialReading/SerialReading.ino)
 
+[SerialFastReading](/examples/SerialReading/SerialFastReading.ino)
+
 [Average Measurement](/examples/AverageMeasurement/AverageMeasurement.ino)
 
 [Smooth Measurement](/examples/SmoothMeasurement/SmoothMeasurement.ino)
