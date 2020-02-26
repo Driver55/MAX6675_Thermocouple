@@ -70,7 +70,7 @@ class MAX6675_Thermocouple final : public Thermocouple {
 		double readCelsius();
 		
 		/**
-			Integrated from Nicola Deliso 
+			Integrated by Nicola Deliso 
 			Reads a temperature in Celsius from the thermocouple.
 			in fast mode
 			@return temperature in degree Celsius or
@@ -97,7 +97,7 @@ class MAX6675_Thermocouple final : public Thermocouple {
 	private:
 		byte spiread();
 		/**
-			Integrated from Nicola Deliso
+			Integrated by Nicola Deliso
 		*/
 		byte FastSpiRead();
 
